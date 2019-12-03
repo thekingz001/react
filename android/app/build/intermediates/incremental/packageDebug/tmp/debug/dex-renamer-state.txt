@@ -1,0 +1,4 @@
+#Mon Dec 02 12:58:11 ICT 2019
+base.0=/home/new/React-Project/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+path.0=classes.dex
