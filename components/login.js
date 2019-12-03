@@ -4,35 +4,32 @@ import {
     Text,
     View,
     TextInput,
-    Button,
-    TouchableHighlight,
+    TouchableOpacity,
+    AsyncStorage,
 } from 'react-native';
-import { NativeRouter, Route, Link } from "react-router-native";
+import { Link } from "react-router-native";
 
 var state = [];
+const userinfo = {email: 'admin@admin', password: 'admin'} ;
 
 export default class login extends Component {
-    constructor(props) {
-        super(props);
-        state = {
-            email: '',
-            password: '',
+    loginfuntion = () => {
+        console.log("This Email = " + this.state.email);
+        if(userinfo.email === this.state.email && userinfo.password === this.state.password){
+            //alert('Login');
+            this.AsyncStorage.setItem('islogin', "1")
+        }
+        else{
+            alert('No Login');
         }
     }
 
-    onClickListener = () => {
-        // Alert.alert("Alert", "Button pressed " + viewId);
-        console.log('Test Button');
-
-        // const element = (
-        //     <div>
-        //         <h1>Hello, world!</h1>
-        //         <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        //     </div>
-        // );
-        // // highlight-next-line
-        // ReactDOM.render(element, document.getElementById('root'));
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+        }
     }
 
     render() {
@@ -46,7 +43,8 @@ export default class login extends Component {
                         placeholder="Email"
                         keyboardType="email-address"
                         underlineColorAndroid='transparent'
-                        onChangeText={(email) => this.setState({ email })} />
+                        onChangeText={(email) => this.setState({ email })}
+                        value = { this.state.email } />
                 </View>
 
                 <View style={styles.inputContainer}>
@@ -54,16 +52,17 @@ export default class login extends Component {
                         placeholder="Password"
                         secureTextEntry={true}
                         underlineColorAndroid='transparent'
-                        onChangeText={(password) => this.setState({ password })} />
+                        onChangeText={(password) => this.setState({ password })}
+                        value = { this.state.password } />
                 </View>
-                <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener()}>
+                <TouchableOpacity style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.loginfuntion()}>
                     <Text style={styles.loginText}>Login</Text>
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Link
                     to="/register"
                     underlayColor="#f0f4f7"
                     style={styles.navItem}>
-                    <Text>register</Text>
+                    <Text>Register</Text>
                 </Link>
             </View>
         );
@@ -119,22 +118,3 @@ const styles = StyleSheet.create({
         color: 'white',
     }
 });
-
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-
-// class MyForm extends React.Component {
-//   render() {
-//     return (
-//       <form>
-//         <h1>Hello</h1>
-//         <p>Enter your name:</p>
-//         <input
-//           type="text"
-//         />
-//       </form>
-//     );
-//   }
-// }
-// ReactDOM.render(<MyForm />);
