@@ -6,7 +6,6 @@ import {
     TouchableOpacity,
     AsyncStorage,
 } from 'react-native';
-import { Link } from "react-router-native";
 import styles from '../public/css';
 
 var state = [];

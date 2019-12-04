@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import { Link } from "react-router-native";
 
 import styles from '../public/css';
 var state = [];
@@ -54,9 +53,6 @@ export default class login extends Component {
         </View>
         <TouchableOpacity style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.registerfuntion()}>
           <Text style={styles.loginText}>Register</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.props.navigation.navigate('auth')}>
-          <Text style={styles.loginText}>Back</Text>
         </TouchableOpacity>
       </View>
     );

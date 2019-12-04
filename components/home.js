@@ -21,16 +21,9 @@ export default class Home extends Component {
         <View style={styles.container}>
           <Text style={styles.main}>Home From</Text>
         </View>
-
         <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener()}>
           <Text style={styles.loginText}>SHOW TEXT ON LOG</Text>
         </TouchableHighlight>
-        <Link
-          to="/"
-          underlayColor="#f0f4f7"
-          style={styles.navItem}>
-          <Text>Back</Text>
-        </Link>
       </View>
     );
   }
