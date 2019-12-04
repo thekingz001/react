@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import login from './components/login';
@@ -19,7 +19,7 @@ const RootStack = createStackNavigator(
 
 const AppContainer = createAppContainer(RootStack);
 
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
       <AppContainer />

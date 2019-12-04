@@ -32,7 +32,7 @@ export default class login extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.container}>
-          <Text id={'root'} style={styles.main}>Regisrer From</Text>
+          <Text style={styles.main}>Regisrer From</Text>
         </View>
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}

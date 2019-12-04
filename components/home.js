@@ -4,15 +4,12 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
-import { Link } from "react-router-native";
 import styles from '../public/css';
 
 export default class Home extends Component {
 
   onClickListener = () => {
-    console.log( "Email Is = " + state.email +
-    "Name Is = " + state.name + 
-    "Password Is = " + state.password );
+    console.log( "SHOW LOG AT HOME");
   }
 
   render() {
