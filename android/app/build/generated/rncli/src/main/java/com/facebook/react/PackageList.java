@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import com.awesomeproject.BuildConfig;
 import com.awesomeproject.R;
 
+// react-native-gesture-handler
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-webview
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 
@@ -61,6 +63,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new RNGestureHandlerPackage(),
       new RNCWebViewPackage()
     ));
   }

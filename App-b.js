@@ -1,39 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-ReactDOM.render(
-  <Provider store={store}>
-      <Router
-          routes={config.router.routes}
-          history={browserHistory}
-      />
-  </Provider>,
-  document.getElementById('root')
+import HomeScreen from './components/HomeScreen';
+import DetailsScreen from './components/DetailsScreen';
+import login from './components/login';
+import register from './components/register';
+import home from './components/home';
+
+const RootStack = createStackNavigator(
+  {
+    home: home,
+    HomeScreen: HomeScreen,
+    DetailsScreen: DetailsScreen,
+    Register: register,
+    AuthLoading: login,
+  },
+  {
+    initialRouteName: 'AuthLoading',
+  }
 );
 
-export default class App extends Component {
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends React.Component {
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-
-        <div id="root">
-          <h1>Hello, world Root!</h1>
-        </div>
-
-        <div id="test">
-          <h1>Hello, world Test!</h1>
-        </div>
-
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    return <AppContainer />;
   }
 }

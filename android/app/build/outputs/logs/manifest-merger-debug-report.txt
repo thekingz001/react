@@ -5,6 +5,7 @@ INJECTED from /home/new/React-Project/android/app/src/main/AndroidManifest.xml:1
 INJECTED from /home/new/React-Project/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /home/new/React-Project/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /home/new/React-Project/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-gesture-handler] /home/new/React-Project/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-webview] /home/new/React-Project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
 MERGED from [com.facebook.react:react-native:0.61.5] /home/new/.gradle/caches/transforms-2/files-2.1/02098e2319eb159117d7e82e263b956f/AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r245459] /home/new/.gradle/caches/transforms-2/files-2.1/91128246eb8d539033ea0ec1ec65fd36/AndroidManifest.xml:2:1-11:12
@@ -135,6 +136,8 @@ uses-sdk
 INJECTED from /home/new/React-Project/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/new/React-Project/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/new/React-Project/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-gesture-handler] /home/new/React-Project/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /home/new/React-Project/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-webview] /home/new/React-Project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-webview] /home/new/React-Project/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.61.5] /home/new/.gradle/caches/transforms-2/files-2.1/02098e2319eb159117d7e82e263b956f/AndroidManifest.xml:7:5-9:41
