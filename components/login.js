@@ -7,19 +7,44 @@ import {
     AsyncStorage,
 } from 'react-native';
 import styles from '../public/css';
-const userinfo = { email: 'admin@admin', password: 'admin' };
+// const userinfo = { email: 'admin@admin', password: 'admin' };
 
 export default class login extends Component {
     loginfuntion = async () => {
-        console.log("This Email = " + this.state.email);
-        if (userinfo.email === this.state.email && userinfo.password === this.state.password) {
-            alert('Login');
-            await AsyncStorage.setItem('islogin', "1")
-            this.props.navigation.navigate('home')
-        }
-        else {
-            alert('No Login');
-        }
+        return fetch('http://192.168.1.11:5000/login', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: this.state.email,
+                password: this.state.password,
+            })
+        })
+            .then((response) => {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                        response.status);
+                    return;
+                }
+                // Examine the text in the response
+                response.json().then((data) => {
+                    if (data.x == 'login') {
+                        alert('Login');
+                        AsyncStorage.setItem('islogin', "1")
+                        this.props.navigation.navigate('home')
+                    }
+                    else {
+                        alert('No Login');
+                    }
+                });
+            }
+            )
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            })
+            .done();
     }
 
     constructor(props) {
