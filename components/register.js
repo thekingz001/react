@@ -13,7 +13,27 @@ const userinfo = { email: 'admin@admin', password: 'admin' };
 export default class login extends Component {
   registerfuntion = async () => {
     if (userinfo.email === this.state.email && userinfo.password === this.state.password) {
-      alert('Register');
+      // console.log("This is email =", this.state.email);
+      // console.log("This is password =", this.state.password);
+
+      return fetch('http://192.168.1.11:5000/users/register', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          test1: this.state.email,
+          test2: this.state.password,
+        })
+      })
+      // .then(response => {
+      //   console.log(JSON.stringify(response, null, 4))
+      //   })
+      // .catch(error =>{
+      //   console.error(error);
+      // })
+      .done();
     }
     else {
       alert('No Register');
